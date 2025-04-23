@@ -677,11 +677,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1181507872018466535, guid: f55674625ca1c0d429d7afdcd1086595, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.56
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 1181507872018466535, guid: f55674625ca1c0d429d7afdcd1086595, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.69
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 1181507872018466535, guid: f55674625ca1c0d429d7afdcd1086595, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1050,6 +1050,14 @@ PrefabInstance:
     - target: {fileID: 3244163808467016613, guid: 1f9b6c2ef35b75b45bf9d08a0dce1817, type: 3}
       propertyPath: m_Name
       value: Crosshair
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180166786333438236, guid: 1f9b6c2ef35b75b45bf9d08a0dce1817, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180166786333438236, guid: 1f9b6c2ef35b75b45bf9d08a0dce1817, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
