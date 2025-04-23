@@ -3,74 +3,82 @@ using UnityEngine.Rendering.Universal;
 
 public class CrosshairFollow : MonoBehaviour
 {
-    public Light2D crosshairLight; // assign in Inspector
+    public Light2D crosshairLight;
     private Color storedColor = Color.white;
     private bool colorTransferred = false;
 
     void Update()
     {
-        // Follow the mouse
+        FollowMouse();
+
+        if (Input.GetMouseButtonDown(0))
+            TryAbsorbWisp();
+
+        if (Input.GetMouseButtonDown(1))
+            HandleRightClick();
+
+        if (Input.GetKeyDown(KeyCode.E))
+            ResetAll();
+    }
+
+    void FollowMouse()
+    {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0f;
         transform.position = mousePos;
+    }
 
-        // Absorb wisp color (Left Click)
-        if (Input.GetMouseButtonDown(0))
+    void TryAbsorbWisp()
+    {
+        Vector3 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Collider2D hit = Physics2D.OverlapPoint(clickPos);
+
+        if (hit != null && hit.CompareTag("Wisp"))
         {
-            Collider2D hit = Physics2D.OverlapPoint(mousePos);
-            if (hit && hit.CompareTag("Wisp"))
+            SpriteRenderer wisp = hit.GetComponent<SpriteRenderer>();
+            if (wisp != null)
             {
-                SpriteRenderer wispSprite = hit.GetComponent<SpriteRenderer>();
-                if (wispSprite != null)
-                {
-                    storedColor = wispSprite.color;
-                    crosshairLight.color = storedColor;
-                    colorTransferred = false; // reset transfer status
-                }
+                storedColor = wisp.color;
+                crosshairLight.color = storedColor;
+                colorTransferred = false;
             }
         }
+    }
 
-        // Transfer to player (1st Right Click), then reset crosshair (2nd Right Click)
-        if (Input.GetMouseButtonDown(1))
+    void HandleRightClick()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player == null) return;
+
+        Light2D playerLight = player.GetComponentInChildren<Light2D>();
+        if (playerLight == null) return;
+
+        if (!colorTransferred)
         {
-            if (!colorTransferred)
-            {
-                GameObject player = GameObject.FindWithTag("Player");
-                if (player != null)
-                {
-                    Light2D playerLight = player.GetComponentInChildren<Light2D>();
-                    if (playerLight != null)
-                    {
-                        playerLight.color = storedColor;
-                        colorTransferred = true; // mark as transferred
-                    }
-                }
-            }
-            else
-            {
-                crosshairLight.color = Color.white;
-                storedColor = Color.white;
-                colorTransferred = false; // reset
-            }
+            playerLight.color = storedColor;
+            colorTransferred = true;
         }
-
-        // Reset both (E key)
-        if (Input.GetKeyDown(KeyCode.E))
+        else
         {
             storedColor = Color.white;
             crosshairLight.color = Color.white;
-
-            GameObject player = GameObject.FindWithTag("Player");
-            if (player != null)
-            {
-                Light2D playerLight = player.GetComponentInChildren<Light2D>();
-                if (playerLight != null)
-                {
-                    playerLight.color = Color.white;
-                }
-            }
-
             colorTransferred = false;
         }
+    }
+
+    void ResetAll()
+    {
+        storedColor = Color.white;
+        crosshairLight.color = Color.white;
+
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            Light2D playerLight = player.GetComponentInChildren<Light2D>();
+            if (playerLight != null)
+                playerLight.color = Color.white;
+        }
+
+        colorTransferred = false;
     }
 }

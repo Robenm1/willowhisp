@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Wisp
+  - Teleporter
+  - OrangeCeilingOrb
+  - BlueWall
+  - PurpleWall
+  - OrangeWall
+  - BluePlatform
   layers:
   - Default
   - TransparentFX
