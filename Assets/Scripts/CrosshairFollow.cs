@@ -35,10 +35,10 @@ public class CrosshairFollow : MonoBehaviour
 
         if (hit != null && hit.CompareTag("Wisp"))
         {
-            SpriteRenderer wisp = hit.GetComponent<SpriteRenderer>();
-            if (wisp != null)
+            Light2D wispLight = hit.GetComponentInChildren<Light2D>();
+            if (wispLight != null)
             {
-                storedColor = wisp.color;
+                storedColor = wispLight.color;
                 crosshairLight.color = storedColor;
                 colorTransferred = false;
             }

@@ -5,11 +5,12 @@ using System.Collections;
 public class BluePlatform : MonoBehaviour
 {
     public float activeDuration = 3f;
-    public Color blueColor = new Color(0f, 0.5f, 1f);
+    public Color blueColor = new Color(0f, 0.5f, 1f); // The blue wisp color
     public float tolerance = 0.05f;
 
     private SpriteRenderer sprite;
     private Collider2D col;
+    private Animator animator;
 
     private bool isActive = false;
 
@@ -17,10 +18,15 @@ public class BluePlatform : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
 
-        // Leave collider ON so it can be clicked, but platform invisible and pass-through
-        sprite.enabled = false;
-        col.isTrigger = true;
+        sprite.enabled = true;          // Always visible
+        col.isTrigger = true;           // Not solid by default
+
+        if (animator != null)
+        {
+            animator.Play("BluePlatformAir"); // Start with air animation
+        }
     }
 
     void Update()
@@ -35,7 +41,7 @@ public class BluePlatform : MonoBehaviour
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0f;
 
-            if (col.OverlapPoint(mousePos))
+            if (col.OverlapPoint(mousePos) && !isActive)
             {
                 StartCoroutine(ActivateTemporarily());
             }
@@ -44,18 +50,25 @@ public class BluePlatform : MonoBehaviour
 
     IEnumerator ActivateTemporarily()
     {
-        SetPlatformState(true);
+        isActive = true;
+
+        if (animator != null)
+        {
+            animator.Play("BluePlatformFreeze"); // Play freeze animation once
+        }
+
+        yield return new WaitForSeconds(0.2f); // Wait for animation to begin
+        col.isTrigger = false; // Now platform is solid
+
         yield return new WaitForSeconds(activeDuration);
-        SetPlatformState(false);
-    }
 
-    void SetPlatformState(bool state)
-    {
-        isActive = state;
-        sprite.enabled = state;
-        col.isTrigger = !state; // When active = solid. When inactive = ghost
+        col.isTrigger = true; // Back to ghost mode
+        isActive = false;
 
-        Debug.Log("Platform is now " + (state ? "ACTIVE" : "INACTIVE"));
+        if (animator != null)
+        {
+            animator.Play("BluePlatformAir"); // Return to air animation
+        }
     }
 
     bool IsColorMatch(Color a, Color b)
