@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6, y: 1.52, z: 1}
+  m_LocalScale: {x: 0.26, y: 0.23, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6684760622704255030}
@@ -47,12 +47,12 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.343
   m_Color: {r: 0.22352941, g: 1, b: 0.972549, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000001d28e63f
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 4853149425914073623}
   - component: {fileID: 6997658258522816217}
   - component: {fileID: 7731976778277320702}
+  - component: {fileID: 4084561603032594826}
   m_Layer: 0
   m_Name: BlueWisp
   m_TagString: Wisp
@@ -141,7 +142,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.69, y: 2.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.34, y: 3.81, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5145960296419124916}
@@ -191,8 +192,8 @@ SpriteRenderer:
   m_SortingLayerID: 1072048157
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.2216981, g: 1, b: 0.9735851, a: 1}
+  m_Sprite: {fileID: 1365891097, guid: 86d2c5dc6a14be0469d9ecee6e98d9ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -236,8 +237,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.0035844445}
-  m_Radius: 0.70774883
+  m_Offset: {x: -0.014875382, y: 0.0035844445}
+  m_Radius: 0.13058522
 --- !u!114 &7731976778277320702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,3 +252,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   revealDistance: 2
+--- !u!95 &4084561603032594826
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5880812193606081455}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5c0c390f0515fb47bf7d94a6406a3e9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
