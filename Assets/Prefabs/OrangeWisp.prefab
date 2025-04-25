@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8847058245123205176}
   - component: {fileID: 2250763563881769864}
   - component: {fileID: 617337964974183193}
-  - component: {fileID: 126578889523286644}
+  - component: {fileID: 9189105159087363455}
   m_Layer: 0
   m_Name: OrangeWisp
   m_TagString: Wisp
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1072048157
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_Sprite: {fileID: 4529214155582158348, guid: 328017253d175c044b12da5dbd60c9a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   revealDistance: 2
---- !u!95 &126578889523286644
+--- !u!95 &9189105159087363455
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

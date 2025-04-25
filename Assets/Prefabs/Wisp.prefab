@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7231320277768645154}
   - component: {fileID: 4602293682297019338}
   - component: {fileID: 8193872907358577389}
-  - component: {fileID: 4315954598990174934}
+  - component: {fileID: 8900175123927501361}
+  - component: {fileID: 6758315320081928295}
   m_Layer: 0
   m_Name: Wisp
   m_TagString: Wisp
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1072048157
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_Sprite: {fileID: -892471980, guid: 39b7ffff68b3b2d499dac8d47af8cf96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -140,7 +141,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   revealDistance: 2
---- !u!95 &4315954598990174934
+--- !u!114 &8900175123927501361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170850781255665731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8018a4294f3c948b987ba8d6ed2f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  revealDistance: 2
+--- !u!95 &6758315320081928295
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

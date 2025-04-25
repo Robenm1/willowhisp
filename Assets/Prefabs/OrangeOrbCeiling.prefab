@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5186796625377377604}
   - component: {fileID: 5613326635183046107}
   - component: {fileID: 2024335914006074898}
-  - component: {fileID: 8982160322058698396}
+  - component: {fileID: 1923420150309010843}
   m_Layer: 0
   m_Name: OrangeOrbCeiling
   m_TagString: OrangeCeilingOrb
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 11
   m_Sprite: {fileID: 1876875836, guid: eb0634166d8e66c498c05bfc881e47ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   tolerance: 0.05
   teleportOffsetY: 1
   jumpForce: 7
---- !u!95 &8982160322058698396
+--- !u!95 &1923420150309010843
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

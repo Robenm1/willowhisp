@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7420119379269921931}
   - component: {fileID: 6602887827694292652}
   - component: {fileID: 5751385723353984978}
-  - component: {fileID: 5498263653078916037}
+  - component: {fileID: 819288698841596526}
   m_Layer: 0
   m_Name: BluePlatform
   m_TagString: BluePlatform
@@ -163,7 +163,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 11
   m_Sprite: {fileID: 4311277859609562655, guid: d30e4b6f2eafbc744b38cbb59c0d2c48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
   activeDuration: 3
   blueColor: {r: 0.22352941, g: 1, b: 0.972549, a: 1}
   tolerance: 0.05
---- !u!95 &5498263653078916037
+--- !u!95 &819288698841596526
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

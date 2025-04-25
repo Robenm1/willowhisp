@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 4853149425914073623}
   - component: {fileID: 6997658258522816217}
   - component: {fileID: 7731976778277320702}
-  - component: {fileID: 4084561603032594826}
+  - component: {fileID: 2808052334395797688}
   m_Layer: 0
   m_Name: BlueWisp
   m_TagString: Wisp
@@ -191,7 +191,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1072048157
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_Sprite: {fileID: 1365891097, guid: 86d2c5dc6a14be0469d9ecee6e98d9ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   revealDistance: 2
---- !u!95 &4084561603032594826
+--- !u!95 &2808052334395797688
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
