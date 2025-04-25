@@ -7,9 +7,6 @@ TagManager:
   - Wisp
   - Teleporter
   - OrangeCeilingOrb
-  - BlueWall
-  - PurpleWall
-  - OrangeWall
   - BluePlatform
   layers:
   - Default

@@ -18,20 +18,16 @@ public class PlayerMovement : MonoBehaviour
     {
         float move = Input.GetAxisRaw("Horizontal");
 
-        // Maintain your existing velocity logic
+        // Movement logic (keep your own custom Y handling)
         rb.linearVelocity = new Vector2(move * moveSpeed, rb.linearVelocityY);
 
-        // Play animations
-        if (Mathf.Abs(move) > 0.01f)
-        {
-            animator.Play("WilloRun");
+        // Set speed parameter for animation blend
+        animator.SetFloat("Speed", Mathf.Abs(move));
 
-            // Flip sprite based on direction
-            sprite.flipX = move < 0;
-        }
-        else
+        // Flip sprite
+        if (move != 0)
         {
-            animator.Play("WilloIdle");
+            sprite.flipX = move < 0;
         }
     }
 }
