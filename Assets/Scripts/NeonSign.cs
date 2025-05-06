@@ -21,6 +21,7 @@ public class NeonFlickerCycle : MonoBehaviour
     public float steadyStartDelay = 4f;
 
     private float baseIntensity;
+    private bool wispsFadedIn = false;
 
     void Start()
     {
@@ -35,28 +36,40 @@ public class NeonFlickerCycle : MonoBehaviour
 
     IEnumerator FlickerCycle()
     {
+        // Initial delay (light stays on at first)
         yield return new WaitForSeconds(steadyStartDelay);
 
         while (true)
         {
-            // 💥 Broken Flicker: off/on flashes
-            float brokenTime = 0f;
-            while (brokenTime < brokenFlickerDuration)
+            // 💥 Broken Flicker (light toggles on/off)
+            float flickerTime = 0f;
+            while (flickerTime < brokenFlickerDuration)
             {
                 flickerLight.enabled = !flickerLight.enabled;
                 float wait = Random.Range(minBrokenInterval, maxBrokenInterval);
                 yield return new WaitForSeconds(wait);
-                brokenTime += wait;
+                flickerTime += wait;
             }
 
-            // 🕯️ Turn off for a while
+            // 🕯️ Light turns off
             flickerLight.enabled = false;
+
+            // 🟣 Fade in wisps only once
+            if (!wispsFadedIn)
+            {
+                foreach (var wisp in FindObjectsOfType<WispFadeSimple>())
+                {
+                    wisp.FadeIn();
+                }
+                wispsFadedIn = true;
+            }
+
             yield return new WaitForSeconds(offDuration);
 
-            // 💡 Turn on and stay lit
+            // 💡 Light turns back on
             flickerLight.enabled = true;
 
-            // 🌟 Intensity flicker: light stays ON but pulses
+            // 🌟 Flicker intensity randomly (but stay on)
             float stableTime = 0f;
             while (stableTime < stableFlickerDuration)
             {
@@ -65,7 +78,7 @@ public class NeonFlickerCycle : MonoBehaviour
                 stableTime += 0.05f;
             }
 
-            // 🔁 Reset intensity to default
+            // 🔁 Reset to steady brightness and delay before looping
             flickerLight.intensity = baseIntensity;
             yield return new WaitForSeconds(steadyStartDelay);
         }

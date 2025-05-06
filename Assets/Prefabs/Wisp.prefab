@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8193872907358577389}
   - component: {fileID: 8900175123927501361}
   - component: {fileID: 6758315320081928295}
+  - component: {fileID: 7325333402367102424}
   m_Layer: 0
   m_Name: Wisp
   m_TagString: Wisp
@@ -126,8 +127,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0035270588, y: 0.020846048}
-  m_Radius: 0.1435548
+  m_Offset: {x: 0.01010257, y: 0.022724777}
+  m_Radius: 0.19240132
 --- !u!114 &8193872907358577389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +177,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7325333402367102424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170850781255665731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc552141dc39a6849aad1863cf672ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1.5
 --- !u!1 &7477575194736206437
 GameObject:
   m_ObjectHideFlags: 0

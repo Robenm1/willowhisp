@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2250763563881769864}
   - component: {fileID: 617337964974183193}
   - component: {fileID: 9189105159087363455}
+  - component: {fileID: 7801133692995202230}
   m_Layer: 0
   m_Name: OrangeWisp
   m_TagString: Wisp
@@ -125,8 +126,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0011974871, y: 0.04908876}
-  m_Radius: 0.11978553
+  m_Offset: {x: -0.010805786, y: 0.052227467}
+  m_Radius: 0.18408325
 --- !u!114 &617337964974183193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +163,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7801133692995202230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881099843997671254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc552141dc39a6849aad1863cf672ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1.5
 --- !u!1 &4750080574455579203
 GameObject:
   m_ObjectHideFlags: 0

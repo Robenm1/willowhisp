@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 6997658258522816217}
   - component: {fileID: 7731976778277320702}
   - component: {fileID: 2808052334395797688}
+  - component: {fileID: 1706299513413622844}
   m_Layer: 0
   m_Name: BlueWisp
   m_TagString: Wisp
@@ -237,8 +238,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.014875382, y: 0.0035844445}
-  m_Radius: 0.13058522
+  m_Offset: {x: -0.001710461, y: 0.0035844452}
+  m_Radius: 0.18412264
 --- !u!114 &7731976778277320702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,3 +275,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1706299513413622844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5880812193606081455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc552141dc39a6849aad1863cf672ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1.5
