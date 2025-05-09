@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class WispFadeSimple : MonoBehaviour
 {
@@ -10,6 +11,13 @@ public class WispFadeSimple : MonoBehaviour
 
     void Awake()
     {
+        // Only allow in "MainMenu" scene
+        if (SceneManager.GetActiveScene().name != "MainMenu")
+        {
+            this.enabled = false;
+            return;
+        }
+
         sprite = GetComponent<SpriteRenderer>();
         light2D = GetComponentInChildren<Light2D>();
 
@@ -19,12 +27,14 @@ public class WispFadeSimple : MonoBehaviour
 
     public void FadeIn()
     {
+        if (!enabled) return;
         StopAllCoroutines();
         StartCoroutine(FadeRoutine(0f, 1f));
     }
 
     public void FadeOut()
     {
+        if (!enabled) return;
         StopAllCoroutines();
         StartCoroutine(FadeRoutine(1f, 0f));
     }
